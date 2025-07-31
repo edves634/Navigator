@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Основной контейнер: ConstraintLayout для экрана "Избранное" -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/favorites_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Заголовок раздела "Избранное" -->
+    <TextView
+        android:id="@+id/favorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/favorites_text"
+        android:textColor="@color/text_color_selector"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Кнопка перехода к деталям избранного -->
+    <Button
+        android:id="@+id/btnDetailsFavorites"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/details"
+        app:layout_constraintEnd_toEndOf="@+id/favorites"
+        app:layout_constraintStart_toStartOf="@+id/favorites"
+        app:layout_constraintTop_toBottomOf="@+id/favorites" />
+</androidx.constraintlayout.widget.ConstraintLayout>

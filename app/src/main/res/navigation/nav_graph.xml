@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <!-- Глобальное действие перехода на домашний экран -->
+    <action
+        android:id="@+id/action_global_home"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/main_flow"
+        app:popUpToInclusive="false" />
+
+    <!-- Глобальное действие перехода на сплеш-экран -->
+    <action
+        android:id="@+id/action_global_splash"
+        app:destination="@id/splashFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+
+    <!-- Стартовый экран приложения -->
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.test.SplashFragment"
+        android:label="@string/splash_graph">
+        <action
+            android:id="@+id/action_to_auth_flow"
+            app:destination="@id/auth_flow"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_to_main_flow"
+            app:destination="@id/main_flow"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Поток аутентификации (логин/регистрация) -->
+    <navigation
+        android:id="@+id/auth_flow"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.example.test.LoginFragment"
+            android:label="Login">
+            <action
+                android:id="@+id/action_to_register"
+                app:destination="@id/registerFragment" />
+            <action
+                android:id="@+id/action_to_main"
+                app:destination="@id/main_flow"
+                app:popUpTo="@id/auth_flow"
+                app:popUpToInclusive="true" />
+        </fragment>
+
+        <!-- Экран регистрации -->
+        <fragment
+            android:id="@+id/registerFragment"
+            android:name="com.example.test.RegisterFragment"
+            android:label="Register">
+
+            <!-- Автоматический возврат через системную кнопку -->
+            <action
+                android:id="@+id/action_register_to_main"
+                app:destination="@id/main_flow"
+                app:popUpTo="@id/auth_flow"
+                app:popUpToInclusive="true" />
+        </fragment>
+    </navigation>
+
+    <!-- Основной поток приложения (после аутентификации) -->
+    <navigation
+        android:id="@+id/main_flow"
+        app:startDestination="@id/homeFragment">
+
+        <!-- Домашний экран -->
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.example.test.HomeFragment"
+            android:label="@string/home_graph">
+            <action
+                android:id="@+id/action_to_search"
+                app:destination="@id/searchFragment" />
+            <action
+                android:id="@+id/action_to_favorites"
+                app:destination="@id/favoritesFragment" />
+            <action
+                android:id="@+id/action_to_responses"
+                app:destination="@id/responsesFragment" />
+            <action
+                android:id="@+id/action_to_profile"
+                app:destination="@id/profileFragment" />
+        </fragment>
+
+        <!-- Экран поиска -->
+        <fragment
+            android:id="@+id/searchFragment"
+            android:name="com.example.test.SearchFragment"
+            android:label="@string/favorites_graph">
+            <action
+                android:id="@+id/action_to_nested_flow"
+                app:destination="@id/nested_flow" />
+            <action
+                android:id="@+id/action_search_to_home"
+                app:destination="@id/homeFragment" />
+        </fragment>
+
+        <!-- Экран избранного -->
+        <fragment
+            android:id="@+id/favoritesFragment"
+            android:name="com.example.test.FavoritesFragment"
+            android:label="@string/favorites_graph">
+            <action
+                android:id="@+id/action_favorites_to_home"
+                app:destination="@id/homeFragment" />
+            <action
+                android:id="@+id/action_to_details"
+                app:destination="@id/detailsFragment" />
+        </fragment>
+
+        <!-- Детализация элемента избранного -->
+        <fragment
+            android:id="@+id/detailsFragment"
+            android:name="com.example.test.DetailsFavorites"
+            android:label="@string/details_graph">
+            <action
+                android:id="@+id/action_details_to_favorites"
+                app:destination="@id/favoritesFragment" />
+        </fragment>
+
+        <!-- Экран откликов -->
+        <fragment
+            android:id="@+id/responsesFragment"
+            android:name="com.example.test.ResponsesFragment"
+            android:label="@string/response_graph">
+            <action
+                android:id="@+id/action_responses_to_viewpager"
+                app:destination="@id/view_pager" />
+            <action
+                android:id="@+id/action_to_nested_flow"
+                app:destination="@id/nested_flow" />
+        </fragment>
+
+        <!-- Экран профиля пользователя -->
+        <fragment
+            android:id="@+id/profileFragment"
+            android:name="com.example.test.ProfileFragment"
+            android:label="@string/profile_graph">
+            <action
+                android:id="@+id/action_to_auth_flow"
+                app:destination="@id/auth_flow" />
+        </fragment>
+
+        <!-- Экран с ViewPager -->
+        <fragment
+            android:id="@+id/view_pager"
+            android:name="com.example.test.ViewPager"
+            android:label="@string/viewpager">
+
+        </fragment>
+
+        <!-- Вложенный навигационный поток -->
+        <navigation
+            android:id="@+id/nested_flow"
+            app:startDestination="@id/firstFragment">
+            <fragment
+                android:id="@+id/firstFragment"
+                android:name="com.example.test.FirstFragment"
+                android:label="First Screen">
+                <action
+                    android:id="@+id/action_to_second"
+                    app:destination="@id/secondFragment" />
+            </fragment>
+
+            <!-- Второй экран вложенного потока -->
+            <fragment
+                android:id="@+id/secondFragment"
+                android:name="com.example.test.SecondFragment"
+                android:label="Second Screen" />
+        </navigation>
+    </navigation>
+</navigation>

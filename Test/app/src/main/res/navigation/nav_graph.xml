@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.test.SplashFragment"
+        android:label="@string/splash_graph">
+
+        <action
+            android:id="@+id/action_to_splash_login"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_to_splash_register"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Home Fragment -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.test.HomeFragment"
+        android:label="@string/home_graph">
+
+        <action
+            android:id="@+id/action_to_search"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+
+        <action
+            android:id="@+id/action_to_favorites"
+            app:destination="@id/favoritesFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+
+        <action
+            android:id="@+id/action_to_reviews"
+            app:destination="@id/reviewsFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_to_profile"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+
+
+    </fragment>
+
+    <!-- Search Fragment -->
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.test.SearchFragment"
+        android:label="@string/favorites_graph">
+        <action
+            android:id="@+id/action_to_nested_flow"
+            app:destination="@id/nested_flow" />
+        <action
+            android:id="@+id/action_search_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/searchFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <!-- Favorites Fragment -->
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.test.FavoritesFragment"
+        android:label="@string/favorites_graph">
+        <action
+            android:id="@+id/action_favorites_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/favoritesFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <!-- Details Favorites Fragment -->
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.test.DetailsFavorites"
+        android:label="@string/details_graph">
+        <action
+            android:id="@+id/action_details_to_favorites"
+            app:destination="@id/favoritesFragment"
+            app:popUpTo="@id/detailsFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <!-- Reviews Fragment -->
+    <fragment
+        android:id="@+id/reviewsFragment"
+        android:name="com.example.test.ReviewsFragment"
+        android:label="@string/response_graph" >
+        <action
+            android:id="@+id/action_reviews_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/reviewsFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <!-- Profile Fragment -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.test.ProfileFragment"
+        android:label="@string/profile_graph" >
+        <action
+            android:id="@+id/action_profile_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <!-- Register Fragment -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.test.RegisterFragment"
+        android:label="@string/register_graph">
+        <action
+            android:id="@+id/action_to_register"
+            app:destination="@id/profileFragment" />
+
+    </fragment>
+
+
+    <!-- Nested Flow с двумя фрагментами -->
+    <navigation
+        android:id="@+id/nested_flow"
+        app:startDestination="@id/firstFragment">
+
+        <fragment
+            android:id="@+id/firstFragment"
+            android:name="com.example.test.FirstFragment"
+            android:label="First Screen">
+
+            <action
+                android:id="@+id/action_to_second"
+                app:destination="@id/secondFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/secondFragment"
+            android:name="com.example.test.SecondFragment"
+            android:label="Second Screen" />
+    </navigation>
+
+</navigation>

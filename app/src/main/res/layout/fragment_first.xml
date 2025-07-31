@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Корневой контейнер: ConstraintLayout для первого фрагмента -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/firstFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Текстовый заголовок первого фрагмента -->
+    <TextView
+        android:id="@+id/Fragment_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_first"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Кнопка перехода ко второму фрагменту -->
+    <Button
+        android:id="@+id/btnGoToSecond"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/btn_fragment_second"
+        app:layout_constraintEnd_toEndOf="@+id/Fragment_first"
+        app:layout_constraintStart_toStartOf="@+id/Fragment_first"
+        app:layout_constraintTop_toBottomOf="@+id/Fragment_first" />
+</androidx.constraintlayout.widget.ConstraintLayout>

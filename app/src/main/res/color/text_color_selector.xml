@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Состояние при нажатии -->
+    <item android:color="#FF0000" android:state_pressed="true"/>
+    <!-- Состояние при наведении (API 14+) -->
+    <item android:color="#FF5722" android:state_hovered="true"/>
+    <!-- Стандартный цвет -->
+    <item android:color="#3F51B5"/>
+</selector>

@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="favorites_text">Favorites</string>
+    <string name="text_h1_favorites">Details favorites</string>
+    <string name="fragment_first">Fragment first</string>
+    <string name="btn_fragment_second">Tab 2</string>
+    <string name="fragment_second">Fragment second</string>
+    <string name="btn_fragment_first">Tab 1</string>
+    <string name="home">Home</string>
+    <string name="nested_flow">Nested Flow</string>
+    <string name="register">Registration</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register_fragment_btn">Reg</string>
+    <string name="privet">Hello</string>
+    <string name="fragment_splash_login">Login</string>
+    <string name="authorization">Authorization</string>
+    <string name="search_icon">search</string>
+    <string name="favorites_icon">favorites</string>
+    <string name="responses_icon">responses</string>
+    <string name="profile_icon">profile</string>
+    <string name="splash_graph">splash_graph</string>
+    <string name="home_graph">home_graph</string>
+    <string name="favorites_graph">favorites_graph</string>
+    <string name="details_graph">details_graph</string>
+    <string name="response_graph">response_graph</string>
+    <string name="profile_graph">profile_graph</string>
+    <string name="register_graph">register_graph</string>
+    <string name="login">Auth flow</string>
+    <string name="login_btn">Login</string>
+    <string name="register_btn">Registration</string>
+    <string name="profile_image">Profile_img</string>
+    <string name="john_doe">John Doe</string>
+    <string name="john_doe_example_com">JD@gmail.com</string>
+    <string name="logout">Logout</string>
+    <string name="responses">Responses</string>
+    <string name="viewpager">ViewPager</string>
+    <string name="nestedflow">NestedFlow</string>
+    <string name="details">Details</string>
+
+</resources>

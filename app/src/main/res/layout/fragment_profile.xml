@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Корневой контейнер с прокруткой -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <!-- Вертикальный контейнер для содержимого -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Изображение профиля -->
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_profile_placeholder"
+            android:contentDescription="@string/profile_image"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Текстовое поле имени пользователя -->
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/john_doe"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"/>
+
+        <!-- Текстовое поле email пользователя -->
+        <TextView
+            android:id="@+id/userEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/john_doe_example_com"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Кнопка выхода -->
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/teal_200"
+            android:text="@string/logout" />
+
+    </LinearLayout>
+</ScrollView>

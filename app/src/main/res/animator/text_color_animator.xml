@@ -1,0 +1,9 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <objectAnimator
+            android:propertyName="textColor"
+            android:duration="200"
+            android:valueFrom="#3F51B5"
+            android:valueTo="#FF5722"/>
+    </item>
+</selector>
